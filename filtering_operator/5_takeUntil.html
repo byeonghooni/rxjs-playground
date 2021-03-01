@@ -1,0 +1,54 @@
+<!--
+// takeUntil 연산자
+// take는 정해진 값을 처음 몇 개만 순서대로 발행한다는 제약을 두는 연산자다.
+// 만약 특정 이벤트가 발생할 때까지 옵저버블을 구독해야 한다면 takeUntil이 유용하다.
+
+// 함수의 원형은 다음과 같다.
+// takeUntil<T>(notifier: Obervable<any>): MonoTypeOperatorFunction<T>
+
+// 특정 이벤트가 발생했을 때 콜백 함수를 등록하여 어떤 옵저버블의 구독을 해제한다고 생각해보자.
+// 앞에서 말한 것처럼 subscribe 함수와 unsubscribe 함수를 나눠서 작성하는 일이 발생한다.
+// 이때 unsubscribe 함수를 호출할 때 발생하는 이벤트를 옵저버블로 만들어서 notifier를 사용하면
+// takeUntil 연산자가 있는 옵저버블을 구독할 때 notifier를 같이 구독한다.
+// notifier가 처음 값을 발행하는 순간 takeUntil 연산자에 설정된 옵저버블과 notifier의 구독을 중단한다.
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="displayArea">
+  0secs
+</div>
+<button
+  id="stop_btn"
+  type="button"
+>Stop
+</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.6/rxjs.umd.min.js"
+        integrity="sha512-r0R52UFUS1Wx7K9DKFCzPkZbmB0xVXJjc/sk9JByGAcHH2VXrj3tKBzmoYp9PgJm8xRVHlfjvDYN4mG7mhnv4w=="
+        crossorigin="anonymous"></script>
+<script>
+  const { interval, fromEvent } = rxjs;
+  const { take, takeUntil } = rxjs.operators;
+  interval(1000)
+    .pipe(
+      take(10),
+      takeUntil(
+        fromEvent(document.querySelector('#stop_btn'), 'click')
+      )
+    )
+    .subscribe(
+      x => document.querySelector('#displayArea').innerHTML = `${ x + 1 }secs`,
+      err => console.error(`err: ${ err.message }`),
+      () => console.log('completed')
+    );
+  // button을 클릭하면 구독을 해제하고 더 이상 시간을 업데이트 하지 않는다.
+  // 10초가 지나면 take(10) 때문에 해당 옵저버블의 구독을 해제하므로 button을 클릭해도 아무 일이 일어나지 않는다.
+</script>
+</body>
+</html>
