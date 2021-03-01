@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aa51ea1-d3a3-4995-a683-2095a5b420aa" name="Default Changelist" comment="" />
+    <list default="true" id="0aa51ea1-d3a3-4995-a683-2095a5b420aa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/filtering_operator/6_takeWhile.js" beforeDir="false" afterPath="$PROJECT_DIR$/filtering_operator/6_takeWhile.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +27,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
   <component name="ProjectId" id="1p2s7dyniYINILdpBbKpR5hklQa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -35,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.15.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.5.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.31" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/creation_function/from" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -58,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614392353972</updated>
       <workItem from="1614392355133" duration="8986000" />
+      <workItem from="1614639120776" duration="209000" />
     </task>
     <servers />
   </component>
@@ -74,6 +80,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
